@@ -8,8 +8,8 @@
  * Set to zero the instance variable <code> fuelInTank </code> that is used to store the
  * initial amount of fuel in a tank. Complete all of the methods that are given below.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Terence Wu
+ * @version 9/7/2024
  */
 public class Vehicle
 {
@@ -25,8 +25,9 @@ public class Vehicle
      */
     public Vehicle(int mpg, double tankSize)
     {
-        // TODO
-        
+        this.mpg = mpg;
+        this.tankSize = tankSize;
+        fuelInTank = 0;
     }
     
     /**
@@ -34,8 +35,7 @@ public class Vehicle
      * in the tank and the mpg.
      */
     public int milesLeftOnTank(){
-        // TODO
-        return 0;  // delete this line of code
+        return mpg * fuelInTank;
     }
     
     /**
@@ -45,8 +45,8 @@ public class Vehicle
      * @param miles the number of miles to drive
      */
     public void drive(int miles){
-        // TODO
         
+        fuelInTank -= (double)(miles)/mpg;
     }
     
     /**
@@ -54,26 +54,15 @@ public class Vehicle
      * also returns the number of gallons it took to fill it up. 
      */
     public double fillItUp(){
-        // TODO
-        return 0.0; // delete this line of code
-        
+        fuelInTank = tankSize;
     }
     
-    /**
-     * Accessor method that returns the mpg of this vehicle.
-     */
     public int getMilesPerGallon(){
-        // TODO
-        return 0; // delete this line of code
-       
+        return mpg;    
     }
     
-    /**
-     * Accessor method that returns the tank size (in gallons) of this vehicle.
-     */
     public double getTankSize(){
-        // TODO
-        return 0.0; // delete this line of code
+        return tankSize;
     }
     
     /**
@@ -84,8 +73,7 @@ public class Vehicle
      */
     @Override
     public String toString(){
-        // TODO
-        return ""; // delete this line of code
+        return "Miles per Gallon: " + mpg + "\nFuel Tank Capacity: " + tankSize;
     }
         
 }
