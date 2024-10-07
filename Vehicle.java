@@ -54,7 +54,9 @@ public class Vehicle
      * also returns the number of gallons it took to fill it up. 
      */
     public double fillItUp(){
+        int fuel = fuelInTank;
         fuelInTank = tankSize;
+        return fuelInTank - fuel;
     }
     
     public int getMilesPerGallon(){
